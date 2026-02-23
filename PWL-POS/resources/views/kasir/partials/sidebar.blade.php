@@ -17,19 +17,21 @@
     </div>
 
     <!-- User Info -->
+    @auth
     <div class="px-4 py-4 border-b border-blue-700">
         <div class="flex items-center gap-3 bg-blue-700 bg-opacity-40 rounded-xl px-3 py-3">
             <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center flex-shrink-0">
                 <span class="text-blue-600 font-bold text-sm">
-                    {{ strtoupper(substr(auth()->user()->name ?? 'U', 0, 1)) }}
+                    {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                 </span>
             </div>
             <div class="overflow-hidden">
-                <p class="text-white text-sm font-semibold truncate">{{ auth()->user()->name ?? 'User' }}</p>
-                <p class="text-blue-200 text-xs truncate">{{ auth()->user()->email ?? '' }}</p>
+                <p class="text-white text-sm font-semibold truncate">{{ auth()->user()->name }}</p>
+                <p class="text-blue-200 text-xs truncate">{{ auth()->user()->email }}</p>
             </div>
         </div>
     </div>
+    @endauth
 
     <!-- Navigation -->
     <nav class="flex-1 px-3 py-4 space-y-1">

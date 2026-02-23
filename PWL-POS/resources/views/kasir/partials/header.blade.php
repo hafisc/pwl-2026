@@ -19,17 +19,25 @@
                 </svg>
             </button>
 
-            <!-- User Dropdown -->
+            <!-- User Info jika sudah login -->
+            @auth
             <div class="flex items-center gap-3">
                 <div class="text-right hidden sm:block">
-                    <p class="text-sm font-semibold text-gray-700">{{ auth()->user()->name ?? 'User' }}</p>
-                    <p class="text-xs text-gray-400">{{ auth()->user()->email ?? '' }}</p>
+                    <p class="text-sm font-semibold text-gray-700">{{ auth()->user()->name }}</p>
+                    <p class="text-xs text-gray-400">{{ auth()->user()->email }}</p>
                 </div>
                 <div class="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-sm"
                      style="background-color: oklch(48.8% 0.243 264.376);">
-                    {{ strtoupper(substr(auth()->user()->name ?? 'U', 0, 1)) }}
+                    {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
                 </div>
             </div>
+            @else
+            <a href="{{ route('login') }}"
+               class="text-sm font-medium text-white px-4 py-2 rounded-lg transition hover:opacity-90"
+               style="background-color: oklch(48.8% 0.243 264.376);">
+                Login
+            </a>
+            @endauth
         </div>
     </div>
 </header>

@@ -67,10 +67,7 @@
             @yield('content')
         </main>
 
-        <!-- Footer -->
-        <footer class="bg-white border-t border-gray-200 px-6 py-3 text-center text-xs text-gray-400">
-            &copy; {{ date('Y') }} PWL POS &mdash; Politeknik Negeri Malang
-        </footer>
+        
     </div>
 
 </body>

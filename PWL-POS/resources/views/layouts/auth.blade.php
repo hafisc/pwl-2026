@@ -57,9 +57,7 @@
             @yield('content')
         </div>
 
-        <p class="text-center text-blue-200 text-xs mt-6">
-            &copy; {{ date('Y') }} PWL POS &mdash; Politeknik Negeri Malang
-        </p>
+        
     </div>
 </body>
 </html>

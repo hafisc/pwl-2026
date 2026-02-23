@@ -141,7 +141,7 @@
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-100 py-6 text-center text-sm text-gray-400">
-        &copy; {{ date('Y') }} PWL POS &mdash; Politeknik Negeri Malang
+        &copy; {{ date('Y') }} PWL POS
     </footer>
 
 </body>

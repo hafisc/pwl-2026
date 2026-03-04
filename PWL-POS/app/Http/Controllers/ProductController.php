@@ -2,25 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class ProductController extends Controller
 {
-    // Mapping slug ke nama kategori
-    private array $categories = [
-        'food-beverage'  => 'Food & Beverage',
-        'beauty-health'  => 'Beauty & Health',
-        'home-care'      => 'Home Care',
-        'baby-kid'       => 'Baby & Kid',
-    ];
-
-    public function index(Request $request, string $sub)
+    public function index(string $category)
     {
-        $categoryName = $this->categories[$sub] ?? ucfirst(str_replace('-', ' ', $sub));
-        return view('kasir.product.index', [
-            'sub'          => $sub,
-            'categoryName' => $categoryName,
-            'categories'   => $this->categories,
+        $allowedCategories = [
+            'food-beverage',
+            'beauty-health',
+            'home-care',
+            'baby-kid',
+        ];
+
+        abort_unless(in_array($category, $allowedCategories), 404);
+
+        return view('products', [
+            'category' => $category,
         ]);
     }
 }

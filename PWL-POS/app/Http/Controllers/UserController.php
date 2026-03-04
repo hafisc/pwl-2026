@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 class UserController extends Controller
 {
-    public function show(int $id, string $name)
+    public function profile(int $id, string $name)
     {
-        return view('kasir.user.index', [
-            'id'   => $id,
+        return view('user', [
+            'id' => $id,
             'name' => $name,
         ]);
     }

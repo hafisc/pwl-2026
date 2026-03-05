@@ -107,8 +107,6 @@
         <a href="{{ route('products.category', 'food-beverage') }}">Products</a>
         <a href="{{ route('user.profile', ['id' => 1, 'name' => 'hafis']) }}">User</a>
         <a href="{{ route('sales') }}">Penjualan</a>
-        <a href="{{ route('praktikum.user.fillable') }}">P4 Fillable</a>
-        <a href="{{ route('praktikum.user.single') }}">P4 Single Model</a>
     </nav>
 
     <main>
